@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KJax - Gold Trading Professional | متخصص تداول الذهب</title>
+    <meta name="description" content="KJax - متخصص في تداول الذهب بأسلوب احترافي. توصيات تداول دقيقة وخدمات VIP متميزة">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-gold: #FFD700;
+            --neon-green: #39FF14;
+            --neon-orange: #FF6B35;
+            --dark-bg: #0a0e27;
+            --darker-bg: #050812;
+            --card-bg: #1a1f3a;
+            --border-color: #39FF14;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b8d4;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--darker-bg) 0%, var(--dark-bg) 100%);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Neon Glow Effects */
+        .neon-glow {
+            text-shadow: 0 0 10px rgba(57, 255, 20, 0.8),
+                         0 0 20px rgba(57, 255, 20, 0.6),
+                         0 0 30px rgba(255, 107, 53, 0.4);
+        }
+
+        .glow-box {
+            box-shadow: 0 0 20px rgba(57, 255, 20, 0.3),
+                        inset 0 0 20px rgba(57, 255, 20, 0.1);
+            border: 2px solid rgba(57, 255, 20, 0.5);
+        }
+
+        /* Header */
+        header {
+            background: rgba(10, 14, 39, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid rgba(57, 255, 20, 0.3);
+            padding: 1.5rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            animation: slideDown 0.6s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--neon-green);
+            text-shadow: 0 0 20px rgba(57, 255, 20, 0.8);
+            letter-spacing: 2px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { text-shadow: 0 0 20px rgba(57, 255, 20, 0.8); }
+            50% { text-shadow: 0 0 40px rgba(57, 255, 20, 1); }
+        }
+
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-left: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--neon-green);
+            text-shadow: 0 0 10px rgba(57, 255, 20, 0.8);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background: var(--neon-green);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(10, 14, 39, 0.9) 0%, rgba(26, 31, 58, 0.8) 100%),
+                        url('https://private-us-east-1.manuscdn.com/sessionFile/qFWnTHcS4KAur6QdkU4pAa/sandbox/vHW4hWe9N9RRlmwt6wcGJ5-img-1_1770148706000_na1fn_a2pheC1oZXJvLW5lb24.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvcUZXblRIY1M0S0F1cjZRZGtVNHBBYS9zYW5kYm94L3ZIVzRoV2U5TjlSUmxtd3Q2d2NHSjUtaW1nLTFfMTc3MDE0ODcwNjAwMF9uYTFmbl9hMnBoZUMxb1pYSnZMVzVsYjI0LnBuZz94LW9zcy1wcm9jZXNzPWltYWdlL3Jlc2l6ZSx3XzE5MjAsaF8xOTIwL2Zvcm1hdCx3ZWJwL3F1YWxpdHkscV84MCIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc5ODc2MTYwMH19fV19&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=iJJ~Zzp-iCRYdcI6ePPSpTPmTRw5I6dGrbwB4R4Yx8WZIc8lQTDa00LU3fwgqGYC-fPeDq3fm5ruJutz9i2ImDzgT1MkzKLsTag~yNWXV3V5s21hZaHEH9J2guFsh9XIU24OIhWftXaLwKMbWq~EMyxbqFhlMG2iT8yuWyAka-x7-QezW-HQVY9h2eLtlyiDCjvXff3c1WtmxUjCk4vOk3-OGL1lrhLzUB8hgiG9NA2wzrP2RL0N~9Fr~87oWACRkUmdXwjn-Bzld~roRKkr4f3CQyfdbkRSskId5cS4pwuNQ8LGhtdkPF7K2t48bV4Ejrq2vpvTl3zrrB4mzpispQ__');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(57, 255, 20, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 50%, rgba(255, 107, 53, 0.1) 0%, transparent 50%);
+            animation: moveGradient 8s ease-in-out infinite;
+        }
+
+        @keyframes moveGradient {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(20px, -20px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 800px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            color: var(--neon-green);
+            text-shadow: 0 0 30px rgba(57, 255, 20, 0.8),
+                         0 0 60px rgba(255, 107, 53, 0.4);
+            letter-spacing: 3px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--neon-orange);
+            margin-bottom: 2rem;
+            text-shadow: 0 0 15px rgba(255, 107, 53, 0.6);
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(135deg, var(--neon-green) 0%, var(--neon-orange) 100%);
+            color: var(--darker-bg);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(57, 255, 20, 0.5);
+            cursor: pointer;
+            border: none;
+            margin: 0.5rem;
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(57, 255, 20, 0.5); }
+            50% { box-shadow: 0 0 40px rgba(57, 255, 20, 0.8), 0 0 60px rgba(255, 107, 53, 0.4); }
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 40px rgba(57, 255, 20, 0.8), 0 0 60px rgba(255, 107, 53, 0.6);
+        }
+
+        /* Services Section */
+        .services {
+            max-width: 1400px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--neon-green);
+            text-shadow: 0 0 20px rgba(57, 255, 20, 0.6);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--neon-green), var(--neon-orange));
+            margin: 1rem auto;
+            box-shadow: 0 0 20px rgba(57, 255, 20, 0.5);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, var(--card-bg) 0%, rgba(26, 31, 58, 0.8) 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 2px solid rgba(57, 255, 20, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            animation: slideUp 0.6s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(57, 255, 20, 0.2) 0%, transparent 70%);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            border-color: var(--neon-green);
+            box-shadow: 0 0 30px rgba(57, 255, 20, 0.4);
+            transform: translateY(-10px);
+        }
+
+        .service-card:hover::before {
+            top: -20%;
+            right: -20%;
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--neon-green);
+        }
+
+        .service-card p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        /* VIP Section */
+        .vip-section {
+            background: linear-gradient(135deg, rgba(26, 31, 58, 0.9) 0%, rgba(10, 14, 39, 0.9) 100%),
+                        url('https://private-us-east-1.manuscdn.com/sessionFile/qFWnTHcS4KAur6QdkU4pAa/sandbox/vHW4hWe9N9RRlmwt6wcGJ5-img-3_1770148710000_na1fn_a2pheC1zdWJzY3JpcHRpb24tYmc.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvcUZXblRIY1M0S0F1cjZRZGtVNHBBYS9zYW5kYm94L3ZIVzRoV2U5TjlSUmxtd3Q2d2NHSjUtaW1nLTNfMTc3MDE0ODcxMDAwMF9uYTFmbl9hMnBoZUMxemRXSnpZM0pwY0hScGIyNHRZbWMucG5nP3gtb3NzLXByb2Nlc3M9aW1hZ2UvcmVzaXplLHdfMTkyMCxoXzE5MjAvZm9ybWF0LHdlYnAvcXVhbGl0eSxxXzgwIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzk4NzYxNjAwfX19XX0_&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=mhCuRpjxO3a0vSntm-SZ5DJIZwAe~bI4wFNsht10saZKgSawPxjU7CTRakwJonVLuH1P~VOX9C1r-iNhLcJSJyND7vCRQ~UXKPJqUcFJXY~UBFS6DBgK50kvzt3HBmgAPa6g0n92bwsGoAvsfVnlvFg9IIlWl73Bhvie0qd2Ctv9oTf3Jfb8eKiSJWvBEz9OlVjw4bgsFkOCk23y9ZCXul4JDlYHLRXhibT-EtuxO3-jUous21gxG5xCcK~pgs8Yi1xWnRgdgQ7N4EDHc9lL-t8PUcajUlbR81Ei5u5Y4lycMZL-5JJYMvJBsKLFpD3R~YIkhfXpFrmIm1n~bjFv7Q__');
+            background-size: cover;
+            background-position: center;
+            padding: 4rem 2rem;
+            margin: 4rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .vip-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .vip-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-gold);
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.8);
+            letter-spacing: 2px;
+        }
+
+        .vip-subtitle {
+            text-align: center;
+            font-size: 1.3rem;
+            color: var(--neon-green);
+            margin-bottom: 3rem;
+            text-shadow: 0 0 15px rgba(57, 255, 20, 0.6);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .pricing-card {
+            background: linear-gradient(135deg, rgba(26, 31, 58, 0.95) 0%, rgba(10, 14, 39, 0.95) 100%);
+            padding: 2.5rem;
+            border-radius: 15px;
+            border: 2px solid var(--neon-green);
+            box-shadow: 0 0 30px rgba(57, 255, 20, 0.3);
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            animation: slideUp 0.6s ease-out;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 0 50px rgba(57, 255, 20, 0.6), 0 0 80px rgba(255, 107, 53, 0.3);
+            border-color: var(--neon-orange);
+        }
+
+        .pricing-card.featured {
+            border-color: var(--primary-gold);
+            box-shadow: 0 0 40px rgba(255, 215, 0, 0.4);
+            transform: scale(1.05);
+        }
+
+        .pricing-card.featured:hover {
+            box-shadow: 0 0 60px rgba(255, 215, 0, 0.6), 0 0 100px rgba(57, 255, 20, 0.3);
+        }
+
+        .price {
+            font-size: 2.5rem;
+            color: var(--primary-gold);
+            margin: 1rem 0;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+        }
+
+        .price-period {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .features-list {
+            text-align: right;
+            margin: 2rem 0;
+            list-style: none;
+        }
+
+        .features-list li {
+            padding: 0.7rem 0;
+            color: var(--text-secondary);
+            border-bottom: 1px solid rgba(57, 255, 20, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .features-list li::before {
+            content: '✓';
+            color: var(--neon-green);
+            font-weight: bold;
+            margin-left: 0.5rem;
+            text-shadow: 0 0 10px rgba(57, 255, 20, 0.6);
+        }
+
+        .features-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* Brokers Section */
+        .brokers-section {
+            max-width: 1400px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .brokers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .broker-card {
+            background: linear-gradient(135deg, var(--card-bg) 0%, rgba(26, 31, 58, 0.8) 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 2px solid rgba(57, 255, 20, 0.3);
+            transition: all 0.3s ease;
+            animation: slideUp 0.6s ease-out;
+        }
+
+        .broker-card:hover {
+            border-color: var(--neon-orange);
+            box-shadow: 0 0 30px rgba(255, 107, 53, 0.4);
+            transform: translateY(-10px);
+        }
+
+        .broker-card h3 {
+            color: var(--neon-green);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .broker-card p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .broker-link {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: linear-gradient(135deg, var(--neon-green) 0%, var(--neon-orange) 100%);
+            color: var(--darker-bg);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(57, 255, 20, 0.3);
+        }
+
+        .broker-link:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(57, 255, 20, 0.6);
+        }
+
+        /* Payment Section */
+        .payment-section {
+            background: linear-gradient(135deg, rgba(26, 31, 58, 0.9) 0%, rgba(10, 14, 39, 0.9) 100%);
+            max-width: 1400px;
+            margin: 4rem auto;
+            padding: 3rem 2rem;
+            border-radius: 15px;
+            border: 2px solid rgba(57, 255, 20, 0.3);
+            box-shadow: 0 0 30px rgba(57, 255, 20, 0.2);
+        }
+
+        .payment-title {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--primary-gold);
+            margin-bottom: 2rem;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+        }
+
+        .payment-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .payment-method {
+            background: var(--darker-bg);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid rgba(57, 255, 20, 0.3);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .payment-method:hover {
+            border-color: var(--neon-green);
+            box-shadow: 0 0 20px rgba(57, 255, 20, 0.3);
+        }
+
+        .payment-method h4 {
+            color: var(--neon-green);
+            margin-bottom: 1rem;
+        }
+
+        .payment-method p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.8;
+            word-break: break-all;
+        }
+
+        .usdt-address {
+            background: rgba(57, 255, 20, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            border: 1px solid rgba(57, 255, 20, 0.3);
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            color: var(--neon-green);
+            word-break: break-all;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            max-width: 1400px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, var(--card-bg) 0%, rgba(26, 31, 58, 0.8) 100%);
+            padding: 3rem;
+            border-radius: 15px;
+            border: 2px solid rgba(57, 255, 20, 0.3);
+            box-shadow: 0 0 30px rgba(57, 255, 20, 0.2);
+        }
+
+        .contact-info h3 {
+            color: var(--neon-green);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 0 15px rgba(57, 255, 20, 0.6);
+        }
+
+        .contact-link {
+            display: inline-block;
+            margin: 1rem;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, var(--neon-green) 0%, var(--neon-orange) 100%);
+            color: var(--darker-bg);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(57, 255, 20, 0.4);
+        }
+
+        .contact-link:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 40px rgba(57, 255, 20, 0.7);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--darker-bg);
+            border-top: 2px solid rgba(57, 255, 20, 0.3);
+            padding: 2rem;
+            text-align: center;
+            color: var(--text-secondary);
+            margin-top: 4rem;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        .footer-highlight {
+            color: var(--neon-green);
+            text-shadow: 0 0 10px rgba(57, 255, 20, 0.6);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .vip-title {
+                font-size: 2rem;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+
+            .services-grid,
+            .brokers-grid,
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Scroll Animation */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: revealOnScroll 0.6s ease-out forwards;
+        }
+
+        @keyframes revealOnScroll {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">💎 KJax</div>
+            <nav>
+                <a href="#services">الخدمات</a>
+                <a href="#vip">الاشتراكات</a>
+                <a href="#brokers">الوسطاء</a>
+                <a href="#contact">التواصل</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="neon-glow">KJax</h1>
+            <p class="hero-subtitle">🏆 متخصص تداول الذهب | Gold Trading Professional</p>
+            <p class="hero-description">
+                توصيات تداول دقيقة وموثوقة • Precision over Prediction<br>
+                Order Flow & Bookmap Trader • Trader Gold
+            </p>
+            <div>
+                <a href="#vip" class="cta-button">اشترك الآن</a>
+                <a href="https://t.me/+OvbsGHfh5BJjZWFi" class="cta-button" target="_blank">انضم للقناة</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <h2 class="section-title">خدماتنا المتميزة</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">📊</div>
+                <h3>توصيات تداول دقيقة</h3>
+                <p>نحصل على توصيات تداول الذهب بدقة عالية باستخدام تحليل Order Flow و Bookmap</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🎯</div>
+                <h3>دعم مكثف للمشتركين</h3>
+                <p>دعم شامل والإجابة على جميع أسئلتك بسرعة واحترافية من فريق متخصص</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">💰</div>
+                <h3>خطة إدارة رأس المال</h3>
+                <p>خطة متقدمة لإدارة رأس المال مجانية مع كل اشتراك VIP</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📱</div>
+                <h3>قنوات تليجرام متعددة</h3>
+                <p>قناة عامة مجانية وقناة VIP خاصة للاشتراكات المتميزة</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🔐</div>
+                <h3>أمان وخصوصية</h3>
+                <p>جميع بيانات المشتركين محمية وآمنة بأعلى معايير الأمان</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">⭐</div>
+                <h3>نتائج مثبتة</h3>
+                <p>سجل حافل من النتائج الناجحة والمشتركين الراضين</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- VIP Section -->
+    <section class="vip-section" id="vip">
+        <div class="vip-content">
+            <h2 class="vip-title">💎 اشتراكات VIP المتميزة</h2>
+            <p class="vip-subtitle">اختر الخطة المناسبة لك</p>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>🎁 القناة العامة</h3>
+                    <p style="color: var(--neon-green); font-weight: bold;">مجاني</p>
+                    <ul class="features-list">
+                        <li>توصيات تداول عامة</li>
+                        <li>تحديثات يومية</li>
+                        <li>مجتمع متفاعل</li>
+                    </ul>
+                    <a href="https://t.me/+OvbsGHfh5BJjZWFi" class="broker-link" target="_blank">انضم الآن</a>
+                </div>
+
+                <div class="pricing-card featured">
+                    <h3>👑 اشتراك شهري</h3>
+                    <div class="price">$89<span class="price-period">/شهر</span></div>
+                    <ul class="features-list">
+                        <li>3-7 صفقات يومية</li>
+                        <li>دعم مكثف 24/7</li>
+                        <li>خطة إدارة رأس المال</li>
+                        <li>تحليل متقدم</li>
+                    </ul>
+                    <a href="#contact" class="broker-link">اشترك الآن</a>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>🥇 عرض خاص 3 أشهر</h3>
+                    <div class="price">$139<span class="price-period">/3 أشهر</span></div>
+                    <p style="color: var(--neon-orange); font-weight: bold; margin-bottom: 1rem;">الأفضل قيمة</p>
+                    <ul class="features-list">
+                        <li>3-7 صفقات يومية</li>
+                        <li>دعم مكثف 24/7</li>
+                        <li>خطة إدارة رأس المال</li>
+                        <li>توفير 15%</li>
+                    </ul>
+                    <a href="#contact" class="broker-link">اشترك الآن</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brokers Section -->
+    <section class="brokers-section" id="brokers">
+        <h2 class="section-title">شركات الوساطة الموصى بها</h2>
+        <div class="brokers-grid">
+            <div class="broker-card">
+                <h3>🌍 Just Markets</h3>
+                <p>أفضل شركة وساطة في العالم مع أدوات متقدمة وسيولة عالية</p>
+                <p style="color: var(--neon-green); font-size: 0.9rem; margin: 1rem 0;">كود الوكالة: skjvp0j562</p>
+                <a href="https://one.justmarkets.link/a/skjvp0j562" class="broker-link" target="_blank">فتح حساب</a>
+            </div>
+
+            <div class="broker-card">
+                <h3>🌐 VT Markets</h3>
+                <p>متاحة للدول: اليمن • سوريا • السودان • الاتحاد الأوروبي</p>
+                <p style="color: var(--neon-green); font-size: 0.9rem; margin: 1rem 0;">معرف الشركة التابعة: 940273</p>
+                <a href="https://www.vtmarkets.com/trade-now/?affid=940273" class="broker-link" target="_blank">فتح حساب</a>
+            </div>
+
+            <div class="broker-card">
+                <h3>📚 الدليل الكامل</h3>
+                <p>نوفر دليل شامل لتسجيل وفتح الحساب والإيداع لكل شركة</p>
+                <p style="color: var(--neon-orange); font-size: 0.9rem; margin: 1rem 0;">خطوة بخطوة بالعربية</p>
+                <a href="#contact" class="broker-link">اطلب الدليل</a>
+            </div>
+        </div>
+
+        <div class="payment-section" style="margin-top: 3rem;">
+            <h3 class="payment-title">تحويل الوكالة</h3>
+            <p style="text-align: center; color: var(--text-secondary); margin-bottom: 1.5rem;">
+                إذا كان لديك حساب مع Just Markets، يمكنك تحويل وكالتك إلينا
+            </p>
+            <div style="text-align: center;">
+                <a href="https://justmarkets.pro/ar/spa/system/partner-change" class="broker-link" target="_blank">
+                    رابط تحويل الوكالة
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Section -->
+    <section class="payment-section" id="payment">
+        <h2 class="payment-title">💳 طرق الدفع</h2>
+        <div class="payment-methods">
+            <div class="payment-method">
+                <h4>USDT - TRC-20</h4>
+                <p>الطريقة الأسرع والأكثر أماناً</p>
+                <div class="usdt-address">
+                    TXpk56VNVp55opeQo7vCV5p6uT6jNdZRey
+                </div>
+                <p style="margin-top: 1rem; color: var(--neon-green);">ID: 786471377</p>
+            </div>
+            <div class="payment-method">
+                <h4>Skrill</h4>
+                <p>تحويل سريع وآمن</p>
+                <p style="margin-top: 1rem;">تواصل معنا للتفاصيل</p>
+            </div>
+            <div class="payment-method">
+                <h4>تحويل بنكي</h4>
+                <p>حسب دولتك</p>
+                <p style="margin-top: 1rem;">أخبرنا بدولتك وسنرسل التفاصيل</p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 2rem;">
+            <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                💰 أسعار الاشتراك:
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; max-width: 600px; margin: 0 auto;">
+                <div style="background: rgba(57, 255, 20, 0.1); padding: 1rem; border-radius: 10px; border: 1px solid rgba(57, 255, 20, 0.3);">
+                    <p style="color: var(--neon-green); font-weight: bold;">شهر واحد</p>
+                    <p style="font-size: 1.5rem; color: var(--primary-gold);">$89</p>
+                </div>
+                <div style="background: rgba(255, 215, 0, 0.1); padding: 1rem; border-radius: 10px; border: 2px solid rgba(255, 215, 0, 0.5);">
+                    <p style="color: var(--primary-gold); font-weight: bold;">3 أشهر (الأفضل)</p>
+                    <p style="font-size: 1.5rem; color: var(--neon-orange);">$139</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="contact-info">
+            <h3>📞 تواصل معنا</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 2rem;">
+                لا تتردد في التواصل معنا لأي استفسار أو سؤال
+            </p>
+            <div>
+                <a href="https://t.me/KJaxS" class="contact-link" target="_blank">💬 تليجرام @KJaxS</a>
+                <a href="https://t.me/+OvbsGHfh5BJjZWFi" class="contact-link" target="_blank">📢 القناة العامة</a>
+            </div>
+            <p style="color: var(--neon-green); margin-top: 2rem; text-shadow: 0 0 10px rgba(57, 255, 20, 0.6);">
+                حساب الدعم الوحيد: @KJaxS
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>🏆 <span class="footer-highlight">KJax - Gold Trading Professional</span></p>
+        <p>Trader Gold • Order Flow & Bookmap Trader • Precision over Prediction</p>
+        <p style="margin-top: 1.5rem; font-size: 0.9rem;">
+            © 2026 KJax Trading. جميع الحقوق محفوظة | All Rights Reserved
+        </p>
+        <p style="margin-top: 0.5rem; font-size: 0.85rem; color: #888;">
+            ⚠️ تنويه: التداول ينطوي على مخاطر. تأكد من فهمك للمخاطر قبل البدء.
+        </p>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Scroll reveal animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('scroll-reveal');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.service-card, .pricing-card, .broker-card').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Add animation delay to cards
+        document.querySelectorAll('.service-card, .pricing-card, .broker-card').forEach((el, index) => {
+            el.style.animationDelay = `${index * 0.1}s`;
+        });
+
+        // Parallax effect on hero
+        window.addEventListener('scroll', () => {
+            const hero = document.querySelector('.hero');
+            const scrolled = window.pageYOffset;
+            if (hero) {
+                hero.style.backgroundPosition = `center ${scrolled * 0.5}px`;
+            }
+        });
+
+        console.log('KJax Trading Site Loaded Successfully! 🚀');
+    </script>
+</body>
+</html>
