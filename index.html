@@ -792,39 +792,40 @@
         .vip-card.featured {
             border-color: var(--gold-primary);
             transform: scale(1.03);
+            padding-top: 4rem;
             box-shadow: 
                 0 30px 80px rgba(212, 175, 55, 0.2),
                 inset 0 1px 0 rgba(255, 255, 255, 0.1);
         }
 
-        .vip-card.featured::before {
-            content: 'الأفضل قيمة';
+        /* VIP Card Badge */
+        .vip-card.featured .featured-badge {
             position: absolute;
-            top: 25px;
-            left: -35px;
+            top: -1px;
+            left: -1px;
+            right: -1px;
+            height: 45px;
             background: var(--gradient-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            border-radius: 29px 29px 0 0;
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.5);
+            z-index: 10;
+        }
+
+        .vip-card.featured .featured-badge span {
             color: var(--black-primary);
-            padding: 0.6rem 3.5rem;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             font-weight: 800;
-            transform: rotate(45deg);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            letter-spacing: 1px;
         }
 
-        .vip-card::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(212, 175, 55, 0.05) 0%, transparent 50%);
-            opacity: 0;
-            transition: opacity 0.5s ease;
-        }
-
-        .vip-card:hover::after {
-            opacity: 1;
+        .vip-card.featured .featured-badge svg {
+            width: 18px;
+            height: 18px;
+            fill: var(--black-primary);
         }
 
         .vip-card:hover {
@@ -1042,22 +1043,37 @@
 
         .broker-card.featured-broker {
             border-color: var(--gold-primary);
+            padding-top: 4rem;
         }
 
-        .broker-card.featured-broker::before {
-            content: 'الأفضل عالمياً';
+        /* Broker Card Badge */
+        .broker-card.featured-broker .featured-badge {
             position: absolute;
-            top: 15px;
-            left: 15px;
+            top: -1px;
+            left: -1px;
+            right: -1px;
+            height: 42px;
             background: var(--gradient-gold);
-            color: var(--black-primary);
-            padding: 0.4rem 1rem;
-            font-size: 0.8rem;
-            font-weight: 700;
-            border-radius: 20px;
             display: flex;
             align-items: center;
-            gap: 0.3rem;
+            justify-content: center;
+            gap: 0.5rem;
+            border-radius: 24px 24px 0 0;
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.5);
+            z-index: 10;
+        }
+
+        .broker-card.featured-broker .featured-badge span {
+            color: var(--black-primary);
+            font-size: 0.85rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .broker-card.featured-broker .featured-badge svg {
+            width: 16px;
+            height: 16px;
+            fill: var(--black-primary);
         }
 
         .broker-card:hover {
@@ -1727,6 +1743,11 @@
                     </a>
                 </div>
                 <div class="vip-card glass-card featured reveal">
+                    <!-- Featured Badge -->
+                    <div class="featured-badge">
+                        <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                        <span>الأفضل قيمة</span>
+                    </div>
                     <div class="vip-icon">
                         <span class="icon icon-2xl icon-gold">
                             <svg viewBox="0 0 24 24"><path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"/></svg>
@@ -1856,6 +1877,11 @@
             </div>
             <div class="brokers-grid">
                 <div class="broker-card glass-card featured-broker reveal">
+                    <!-- Featured Badge -->
+                    <div class="featured-badge">
+                        <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                        <span>الأفضل عالمياً</span>
+                    </div>
                     <div class="broker-header">
                         <div class="broker-logo">
                             <span class="icon icon-xl icon-gold">
